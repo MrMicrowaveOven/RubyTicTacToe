@@ -1,6 +1,15 @@
 require_relative '../lib/board.rb'
 
 describe "board" do
+  describe "make_move" do
+    it "makes a move at specified location, of specified player" do
+      board = Board.new
+      expect(board.spaces).to eql([["", "", ""],["", "", ""],["", "", ""]])
+      board.make_move([1,1], "o")
+      expect(board.spaces).to eql([["", "", ""],["", "o", ""],["", "", ""]])
+    end
+
+  end
   describe "winner" do
     # before :each do
     # end
