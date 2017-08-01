@@ -57,18 +57,22 @@ class Board
         string_board << space
       end
     end
-
-    puts " " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
-    puts "---+---+---"
-    puts " " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
-    puts "---+---+---"
-    puts " " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
+    puts "    0 | 1 | 2"
+    # puts "   ___________"
+    puts "0:  " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
+    puts "   ---+---+---"
+    puts "1:  " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
+    puts "   ---+---+---"
+    puts "2:  " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
   end
-  #  o | x | o
-  # ---+---+---
-  #  x | o | x
-  # ---+---+---
-  #  o | x | o
+
+  #     0 | 1 | 2
+  #    ___________
+  # 0:  o | x | o
+  #    ---+---+---
+  # 1:  x | o | x
+  #    ---+---+---
+  # 2:  o | x | o
 
 
   #    |   |
