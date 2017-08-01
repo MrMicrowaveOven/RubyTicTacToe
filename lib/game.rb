@@ -4,6 +4,7 @@ require_relative 'computer_player.rb'
 class Game
   def initialize
     @computer_player = ComputerPlayer.new
+    system("clear")
     start_new_game
   end
 
@@ -35,6 +36,7 @@ class Game
       puts "Computer's turn!"
       sleep(2)
       move = @computer_player.get_computer_move(@game_board)
+      system("clear")
       puts "Computer's move: #{move}"
       @game_board.make_move(move, "o")
       p @game_board
@@ -59,6 +61,7 @@ class Game
       puts "Game is a draw!"
     end
     puts "Let's play again!"
+    start_new_game
   end
 
   def get_move
