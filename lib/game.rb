@@ -2,21 +2,20 @@ require_relative 'board.rb'
 require_relative 'computer_player.rb'
 
 class Game
-  # def initialize
-  #   begin_game
-  # end
-
   def begin_game
-    @computer_player = ComputerPlayer.new
     system("clear")
-    start_new_game
+    @computer_player = ComputerPlayer.new
+    while true
+      start_new_game
+      get_moves
+      game_over
+    end
   end
 
   def start_new_game
     @game_board = Board.new
     puts "Welcome to Tic-Tac-Toe!"
     p @game_board
-    get_moves
   end
 
   def get_moves
@@ -45,7 +44,6 @@ class Game
       @game_board.make_move(move, "o")
       p @game_board
     end
-    game_over
   end
 
   def game_over
@@ -66,7 +64,6 @@ class Game
       puts "Game is a draw!"
     end
     puts "Let's play again!"
-    start_new_game
   end
 
   def get_move
