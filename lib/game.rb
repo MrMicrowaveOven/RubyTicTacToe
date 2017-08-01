@@ -32,7 +32,10 @@ class Game
       if @game_board.winner || @game_board.draw?
         break
       end
+      puts "Computer's turn!"
+      sleep(2)
       move = @computer_player.get_computer_move(@game_board)
+      puts "Computer's move: #{move}"
       @game_board.make_move(move, "o")
       p @game_board
     end
@@ -59,7 +62,9 @@ class Game
   end
 
   def get_move
+    puts "Which row?"
     y_of_move = gets.chomp
+    puts "Which column?"
     x_of_move = gets.chomp
     [y_of_move.to_i, x_of_move.to_i]
   end

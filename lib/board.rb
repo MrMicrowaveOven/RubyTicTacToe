@@ -58,7 +58,6 @@ class Board
       end
     end
     puts "    0 | 1 | 2"
-    # puts "   ___________"
     puts "0:  " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
     puts "   ---+---+---"
     puts "1:  " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
