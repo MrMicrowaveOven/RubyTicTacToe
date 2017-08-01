@@ -26,7 +26,7 @@ class Game
       if @game_board.winner || @game_board.draw?
         break
       end
-      move = @computer_player.get_move(@game_board)
+      move = @computer_player.get_computer_move(@game_board)
       @game_board.make_move(move, "o")
       p @game_board
     end

@@ -5,7 +5,7 @@ class ComputerPlayer
     @previous_boards = Hash.new(0)
   end
 
-  def make_move(board)
+  def get_computer_move(board)
     board_string = ""
     board.spaces.each do |row|
       row.each do |space|
