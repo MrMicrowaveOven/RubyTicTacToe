@@ -8,7 +8,21 @@ describe "board" do
       board.make_move([1,1], "o")
       expect(board.spaces).to eql([[" ", " ", " "],[" ", "o", " "],[" ", " ", " "]])
     end
-
+  end
+  describe "valid_move?" do
+    before :each do
+      @board = Board.new([["x", "x", "x"],[" ", "o", " "],[" ", " ", "x"]])
+    end
+    it "returns false if space is occupied" do
+      expect(@board.valid_move?([1,1])).to eq(false)
+    end
+    it "returns false if space is invalid" do
+      expect(@board.valid_move?([5,1])).to eq(false)
+      expect(@board.valid_move?([-1,1])).to eq(false)
+    end
+    it "returns true if space is empty" do
+      expect(@board.valid_move?([1,0])).to eq(true)
+    end
   end
   describe "winner" do
     it "returns winning player when game has been won horizontally" do

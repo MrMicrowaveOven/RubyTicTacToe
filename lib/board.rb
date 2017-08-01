@@ -8,6 +8,13 @@ class Board
     @spaces[space[0]][space[1]] = x_or_o
   end
 
+  def valid_move?(space)
+    return false if !space
+    return false unless [0,1,2].include?(space[0])
+    return false unless [0,1,2].include?(space[1])
+    @spaces[space[0]][space[1]] == " "
+  end
+
   def winner
     # Horizontal
     @spaces.each do |row|

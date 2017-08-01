@@ -10,7 +10,6 @@ class Game
   def start_new_game
     @game_board = Board.new
     puts "Welcome to Tic-Tac-Toe!"
-    puts "Where would you like to move?"
     p @game_board
     get_moves
   end
@@ -20,7 +19,11 @@ class Game
       if @game_board.winner || @game_board.draw?
         break
       end
-      move = get_move
+      move = false
+      until @game_board.valid_move?(move)
+        puts "Where would you like to move?"
+        move = get_move
+      end
       @game_board.make_move(move, "x")
       p @game_board
       if @game_board.winner || @game_board.draw?
