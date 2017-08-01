@@ -58,4 +58,27 @@ describe "computer_player" do
       expect(@computer_player.get_computer_move(@board)).to eq([0,2])
     end
   end
+
+  describe "AI memory" do
+    it "remembers previous games" do
+      @board = Board.new([[" ", " ", " "],[" ", "x", " "],[" ", " ", " "]])
+      @computer_player = ComputerPlayer.new
+
+      computers_move = @computer_player.get_computer_move(@board)
+      expect(computers_move).to eq([0,0])
+      @board.make_move(computers_move, "o")
+      @board.make_move([0,1], "x")
+
+      computers_move = @computer_player.get_computer_move(@board)
+      expect(computers_move).to eq([0,2])
+      @board.make_move(computers_move, "o")
+      @board.make_move([2,1], "x")
+
+      @computer_player.update_score(@board, false)
+
+      @board = Board.new([[" ", " ", " "],[" ", "x", " "],[" ", " ", " "]])
+      computers_move = @computer_player.get_computer_move(@board)
+      expect(computers_move).to eq([0,1])
+    end
+  end
 end
