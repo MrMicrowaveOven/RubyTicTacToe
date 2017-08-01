@@ -45,6 +45,5 @@ class ComputerPlayer
         @previous_boards[board_this_game] -= 1
       end
     end
-    # @boards_this_game[]
   end
 end

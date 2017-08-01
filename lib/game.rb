@@ -36,7 +36,7 @@ class Game
   def game_over
     if @game_board.winner == "o"
       @computer_player.update_score(@game_board, true)
-    elsif @game_board.winner == "o"
+    elsif @game_board.winner == "x"
       @computer_player.update_score(@game_board, false)
     end
     show_game_end
