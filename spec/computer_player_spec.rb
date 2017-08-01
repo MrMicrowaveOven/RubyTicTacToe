@@ -41,4 +41,21 @@ describe "computer_player" do
       })
     end
   end
+  describe "computer_player AI" do
+    it "chooses the first move with the best score" do
+      @computer_player = ComputerPlayer.new
+      @computer_player.instance_variable_set(:@previous_boards, {
+        "o   x    " => -1,
+        " o  x    " => -5,
+        "  o x    " => 10,
+        "   ox    " => 8,
+        "    xo   " => 2,
+        "    x o  " => 0,
+        "    x  o " => 1,
+        "    x   o" => 10,
+      })
+      @board = Board.new([["", "", ""],["", "x", ""],["", "", ""]])
+      expect(@computer_player.get_computer_move(@board)).to eq([0,2])
+    end
+  end
 end
