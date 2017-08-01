@@ -6,7 +6,7 @@ This was just a fun exercise to make a quick Tic-Tac-Toe game in Ruby.  The comp
 
 Here's a quick one-liner to clone it and play from the command line.
 
-`git clone https://github.com/MrMicrowaveOven/RubyTicTacToe.git && cd RubyTicTacToe && ruby lib/play_game.rb`
+`git clone https://github.com/MrMicrowaveOven/RubyTicTacToe.git && cd RubyTicTacToe && ruby PLAYGAME.rb`
 
 And here's a one-liner to clone it, install rspec, and run the tests.
 
