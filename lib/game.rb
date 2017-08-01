@@ -2,7 +2,11 @@ require_relative 'board.rb'
 require_relative 'computer_player.rb'
 
 class Game
-  def initialize
+  # def initialize
+  #   begin_game
+  # end
+
+  def begin_game
     @computer_player = ComputerPlayer.new
     system("clear")
     start_new_game
@@ -54,6 +58,7 @@ class Game
   end
 
   def show_game_end
+    system("clear")
     p @game_board
     if @game_board.winner
       puts "#{@game_board.winner} is the winner!"
