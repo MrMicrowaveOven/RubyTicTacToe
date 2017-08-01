@@ -43,6 +43,7 @@ class Game
   end
 
   def show_game_end
+    p @game_board
     if @game_board.winner
       puts "#{@game_board.winner} is the winner!"
     else

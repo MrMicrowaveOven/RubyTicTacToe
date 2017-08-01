@@ -42,4 +42,31 @@ class Board
     end
     true
   end
+
+  def inspect
+    string_board = []
+    @spaces.each do |row|
+      row.each do |space|
+        if space == ""
+          string_board << " "
+        else
+          string_board << space
+        end
+      end
+    end
+    string_board
+    # @spaces[0]
+    puts " " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
+    puts "___|___|___"
+    puts " " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
+    puts "___|___|___"
+    puts " " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
+    puts "   |   |   "
+  end
+#    | x |
+# ___|___|___
+#    | o |
+# ___|___|___
+#    |   |
+#    |   |
 end
