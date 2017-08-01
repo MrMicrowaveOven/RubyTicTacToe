@@ -54,17 +54,43 @@ class Board
         end
       end
     end
+
+    #  o | x | o
+    # ---+---+---
+    #  x | o | x
+    # ---+---+---
+    #  o | x | o
+
+
+    #    |   |
+    # ---+---+---
+    #    |   |
+    # ---+---+---
+    #    |   |
+
+
+
+
+
     #  o | x | o
     # ___|___|___
     #  x | o | x
     # ___|___|___
-    #  o | x | o 
+    #  o | x | o
+    #    |   |
+
+
+    #    |   |
+    # ___|___|___
+    #    |   |
+    # ___|___|___
+    #    |   |
     #    |   |
     puts " " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
-    puts "___|___|___"
+    puts "---+---+---"
     puts " " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
-    puts "___|___|___"
+    puts "---+---+---"
     puts " " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
-    puts "   |   |   "
+    # puts "   |   |   "
   end
 end
