@@ -3,7 +3,7 @@ require_relative '../lib/computer_player'
 describe "computer_player" do
   describe "get_computer_move" do
     before :each do
-      @board = Board.new([["x", "", ""],["", "o", ""],["", "", "x"]])
+      @board = Board.new([["x", " ", " "],[" ", "o", " "],[" ", " ", "x"]])
       @computer_player = ComputerPlayer.new
     end
     it "makes a valid move based on the board" do
@@ -18,7 +18,7 @@ describe "computer_player" do
 
   describe "update_score" do
     before :each do
-      @board = Board.new([["x", "", ""],["", "o", ""],["", "", "x"]])
+      @board = Board.new([["x", " ", " "],[" ", "o", " "],[" ", " ", "x"]])
       @computer_player = ComputerPlayer.new
       computers_move = @computer_player.get_computer_move(@board)
       @board.make_move(computers_move, "o")
@@ -54,7 +54,7 @@ describe "computer_player" do
         "    x  o " => 1,
         "    x   o" => 10,
       })
-      @board = Board.new([["", "", ""],["", "x", ""],["", "", ""]])
+      @board = Board.new([[" ", " ", " "],[" ", "x", " "],[" ", " ", " "]])
       expect(@computer_player.get_computer_move(@board)).to eq([0,2])
     end
   end

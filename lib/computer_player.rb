@@ -8,11 +8,7 @@ class ComputerPlayer
     board_string = ""
     board.spaces.each do |row|
       row.each do |space|
-        if space == ""
-          board_string += " "
-        else
-          board_string += space
-        end
+        board_string += space
       end
     end
 

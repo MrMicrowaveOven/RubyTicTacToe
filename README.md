@@ -4,7 +4,7 @@ This was just a fun exercise to make a quick Tic-Tac-Toe game in Ruby.  The comp
 
 # To Use
 
-`ruby PLAYGAME.rb` is all you gots to do.
+`ruby PLAYGAME.rb` is all you gotta do.
 
 Here's a quick one-liner to clone it and play from the command line.
 

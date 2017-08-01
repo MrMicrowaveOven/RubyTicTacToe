@@ -1,6 +1,6 @@
 class Board
   attr_reader :spaces
-  def initialize(spaces = [["", "", ""],["", "", ""],["", "", ""]])
+  def initialize(spaces = [[" ", " ", " "],[" ", " ", " "],[" ", " ", " "]])
     @spaces = spaces
   end
 
@@ -11,22 +11,22 @@ class Board
   def winner
     # Horizontal
     @spaces.each do |row|
-      if row[0] == row[1] && row[1] == row[2] &&  row[0] != ""
+      if row[0] == row[1] && row[1] == row[2] &&  row[0] != " "
         return row[0]
       end
     end
     # Vertical
     3.times do |column_index|
-      if @spaces[0][column_index] == @spaces[1][column_index] && @spaces[1][column_index] == @spaces[2][column_index] && @spaces[0][column_index] != ""
+      if @spaces[0][column_index] == @spaces[1][column_index] && @spaces[1][column_index] == @spaces[2][column_index] && @spaces[0][column_index] != " "
         return @spaces[0][column_index]
       end
     end
     # Diagonal Down-Right
-    if @spaces[0][0] == @spaces[1][1] && @spaces[1][1] == @spaces[2][2] && @spaces[0][0] != ""
+    if @spaces[0][0] == @spaces[1][1] && @spaces[1][1] == @spaces[2][2] && @spaces[0][0] != " "
       return @spaces[0][0]
     end
     # Diagonal Up-Right
-    if @spaces[2][0] == @spaces[1][1] && @spaces[1][1] == @spaces[0][2] && @spaces[2][0] != ""
+    if @spaces[2][0] == @spaces[1][1] && @spaces[1][1] == @spaces[0][2] && @spaces[2][0] != " "
       return @spaces[2][0]
     end
     false
@@ -35,7 +35,7 @@ class Board
   def draw?
     @spaces.each do |row|
       row.each do |space|
-        if space == ""
+        if space == " "
           return false
         end
       end
@@ -47,11 +47,7 @@ class Board
     string_board = []
     @spaces.each do |row|
       row.each do |space|
-        if space == ""
-          string_board << " "
-        else
-          string_board << space
-        end
+        string_board << space
       end
     end
 
