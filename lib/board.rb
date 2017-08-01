@@ -54,8 +54,12 @@ class Board
         end
       end
     end
-    string_board
-    # @spaces[0]
+    #  o | x | o
+    # ___|___|___
+    #  x | o | x
+    # ___|___|___
+    #  o | x | o 
+    #    |   |
     puts " " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
     puts "___|___|___"
     puts " " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
@@ -63,10 +67,4 @@ class Board
     puts " " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
     puts "   |   |   "
   end
-#    | x |
-# ___|___|___
-#    | o |
-# ___|___|___
-#    |   |
-#    |   |
 end
