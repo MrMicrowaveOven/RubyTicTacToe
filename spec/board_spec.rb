@@ -11,8 +11,6 @@ describe "board" do
 
   end
   describe "winner" do
-    # before :each do
-    # end
     it "returns winning player when game has been won horizontally" do
       board = Board.new([["x", "x", "x"],["", "o", ""],["", "", "x"]])
       expect(board.winner).to eql("x")

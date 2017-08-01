@@ -12,7 +12,7 @@ describe "computer_player" do
     end
     it "stores board appropriately" do
       computers_move = @computer_player.get_computer_move(@board)
-      expect(@computer_player.boards_this_game).to eq(["xo  o   x"])
+      expect(@computer_player.instance_variable_get(:@boards_this_game)).to eq(["xo  o   x"])
     end
   end
 
@@ -28,14 +28,14 @@ describe "computer_player" do
     end
     it "if computer won, increases the score of all the boards used in the game" do
       @computer_player.update_score(@board, true)
-      expect(@computer_player.previous_boards).to eq({
+      expect(@computer_player.instance_variable_get(:@previous_boards)).to eq({
         "xo  o   x" => 1,
         "xoxoo   x" => 1
       })
     end
     it "if computer lost, decrease the score of all the boards used in the game" do
       @computer_player.update_score(@board, false)
-      expect(@computer_player.previous_boards).to eq({
+      expect(@computer_player.instance_variable_get(:@previous_boards)).to eq({
         "xo  o   x" => -1,
         "xoxoo   x" => -1
       })

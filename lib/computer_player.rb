@@ -1,5 +1,4 @@
 class ComputerPlayer
-  attr_reader :boards_this_game, :previous_boards
   def initialize
     @boards_this_game = [];
     @previous_boards = Hash.new(0)
