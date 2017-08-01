@@ -23,6 +23,9 @@ class Game
       until @game_board.valid_move?(move)
         puts "Where would you like to move?"
         move = get_move
+        if !@game_board.valid_move?(move)
+          puts "Invalid move."
+        end
       end
       @game_board.make_move(move, "x")
       p @game_board
@@ -52,7 +55,7 @@ class Game
     else
       puts "Game is a draw!"
     end
-    start_new_game
+    puts "Let's play again!"
   end
 
   def get_move
