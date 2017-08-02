@@ -57,7 +57,7 @@ class Board
         string_board << space
       end
     end
-    puts "    0 | 1 | 2"
+    puts "    a | b | c"
     puts "0:  " + string_board[0] + " | " + string_board[3] + " | " + string_board[6] + " "
     puts "   ---+---+---"
     puts "1:  " + string_board[1] + " | " + string_board[4] + " | " + string_board[7] + " "
