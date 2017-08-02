@@ -40,7 +40,7 @@ class Game
       sleep(2)
       move = @computer_player.get_computer_move(@game_board)
       system("clear")
-      puts "Computer's move: #{["a", "b", "c"][move[0]]}#{move[1]}"
+      puts "Computer's move: #{["a", "b", "c"][move[0]]}#{move[1] + 1}"
       @game_board.make_move(move, "o")
       p @game_board
     end
@@ -69,11 +69,9 @@ class Game
   def get_move
     puts "Which column?"
     y_of_move_letter = gets.chomp
-    p y_of_move_letter
-    y_of_move = ["a", "b", "c"].index(y_of_move_letter)
-    p y_of_move
+    y_of_move = ["a", "b", "c"].index(y_of_move_letter).to_i
     puts "Which row?"
-    x_of_move = gets.chomp
-    [y_of_move.to_i, x_of_move.to_i]
+    x_of_move = gets.chomp.to_i - 1
+    [y_of_move, x_of_move]
   end
 end
