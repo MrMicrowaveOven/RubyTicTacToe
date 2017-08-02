@@ -67,9 +67,9 @@ class Game
   end
 
   def get_move
-    puts "Which row?"
-    y_of_move = gets.chomp
     puts "Which column?"
+    y_of_move = gets.chomp
+    puts "Which row?"
     x_of_move = gets.chomp
     [y_of_move.to_i, x_of_move.to_i]
   end

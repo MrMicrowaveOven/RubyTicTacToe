@@ -58,11 +58,11 @@ class Board
       end
     end
     puts "    0 | 1 | 2"
-    puts "0:  " + string_board[0] + " | " + string_board[1] + " | " + string_board[2] + " "
+    puts "0:  " + string_board[0] + " | " + string_board[3] + " | " + string_board[6] + " "
     puts "   ---+---+---"
-    puts "1:  " + string_board[3] + " | " + string_board[4] + " | " + string_board[5] + " "
+    puts "1:  " + string_board[1] + " | " + string_board[4] + " | " + string_board[7] + " "
     puts "   ---+---+---"
-    puts "2:  " + string_board[6] + " | " + string_board[7] + " | " + string_board[8] + " "
+    puts "2:  " + string_board[2] + " | " + string_board[5] + " | " + string_board[8] + " "
   end
 
   #     0 | 1 | 2
