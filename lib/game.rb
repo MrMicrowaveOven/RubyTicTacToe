@@ -2,6 +2,9 @@ require_relative 'board.rb'
 require_relative 'computer_player.rb'
 
 class Game
+
+  COLUMNS = ["a", "b", "c"]
+
   def begin_game
     system("clear")
     @computer_player = ComputerPlayer.new
@@ -9,6 +12,8 @@ class Game
       start_new_game
       get_moves
       game_over
+      show_game_end
+      sleep(2)
     end
   end
 
@@ -52,7 +57,6 @@ class Game
     elsif @game_board.winner == "x"
       @computer_player.update_score(@game_board, false)
     end
-    show_game_end
   end
 
   def show_game_end
@@ -69,7 +73,8 @@ class Game
   def get_move
     puts "Which column?"
     y_of_move_letter = gets.chomp
-    y_of_move = ["a", "b", "c"].index(y_of_move_letter).to_i
+    y_of_move = COLUMNS.index(y_of_move_letter)
+    y_of_move = y_of_move.to_i if y_of_move
     puts "Which row?"
     x_of_move = gets.chomp.to_i - 1
     [y_of_move, x_of_move]
