@@ -37,6 +37,8 @@ class Game
         end
       end
       @game_board.make_move(move, "x")
+      system("clear")
+      puts ""
       p @game_board
       if @game_board.winner || @game_board.draw?
         break
@@ -61,6 +63,7 @@ class Game
 
   def show_game_end
     system("clear")
+    puts ""
     p @game_board
     if @game_board.winner
       puts "#{@game_board.winner} is the winner!"
